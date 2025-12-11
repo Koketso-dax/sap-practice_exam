@@ -471,525 +471,820 @@ const sapIntegrationExam: QuizQuestion[] = [
   },
 ]
 
-const sapDbAdminExam: QuizQuestion[] = [
+const sapDbAdminExam: QuizQuestion[] =[
   {
-    "question": "By default, from where reads an SAP ABAP application server the database connection information?",
+    "question": "Which SAP HANA Cloud tools would you use to diagnose and analyze errors in database trace files? Note: There are 2 correct answers to this question.",
     "options": [
-      "The hdbuserstore on the SAP HANA server.",
-      "The Local Secure Store on the SAP ABAP application server.",
-      "The Secure Storage in File System on the SAP HANA server.",
-      "The hdbuserstore on the SAP ABAP application server."
+      "SAP HANA database explorer",
+      "SAP HANA Cloud Central",
+      "SQL trace analyzer",
+      "Full system information dump"
     ],
-    "correctAnswer": "The hdbuserstore on the SAP ABAP application server."
+    "correctAnswer": ["SAP HANA database explorer", "Full system information dump"]
   },
   {
-    "question": "Which components of an SAP HANA appliance do you need to consider for sizing?",
+    "question": "Which SAP HANA cockpit application can you use to investigate a system offline situation?",
     "options": [
-      "Storage",
-      "Memory",
-      "CPU"
+      "Alert Monitor",
+      "Full System Information Dumps",
+      "Troubleshoot Unresponsive System",
+      "Performance Monitor"
     ],
-    "correctAnswer": "Memory"
+    "correctAnswer": "Troubleshoot Unresponsive System"
   },
   {
-    "question": "Which system view allows you to review the authentication method assigned to your user account?",
+    "question": "Which SAP HANA trace must you activate to analyze performance issues with systems where third-party software cannot be installed?",
     "options": [
-      "M_REMOTE_SOURCES",
-      "M_SERVICES",
-      "M_SECURESTORE",
-      "M_CONNECTIONS"
-    ],
-    "correctAnswer": "M_CONNECTIONS"
-  },
-  {
-    "question": "The index server runs in the system database and contains the actual data stores and the engines for processing the data.",
-    "options": [
-      "True",
-      "False"
-    ],
-    "correctAnswer": "False"
-  },
-  {
-    "question": "When configuring SAP HANA alerts, you can only enter one email recipient per alert.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "False"
-  },
-  {
-    "question": "From which Web site can you securely download the full SAP HANA documentation as a .zip file?",
-    "options": [
-      "https://community.sap.com/topics/hana",
-      "https://help.sap.com/docs/SAP_HANA_PLATFORM",
-      "https://launchpad.support.sap.com/#/softwarecenter"
-    ],
-    "correctAnswer": "https://help.sap.com/docs/SAP_HANA_PLATFORM"
-  },
-  {
-    "question": "Which backup types are available when you schedule a data backup?",
-    "options": [
-      "Interval",
-      "Differential",
-      "Complete",
-      "Snapshot"
-    ],
-    "correctAnswer": [
-      "Differential",
-      "Complete"
-    ]
-  },
-  {
-    "question": "From which backup types can SAP HANA resume a recovery?",
-    "options": [
-      "Log",
-      "Incremental",
-      "Complete",
-      "Fallback snapshot"
-    ],
-    "correctAnswer": [
-      "Log",
-      "Incremental"
-    ]
-  },
-  {
-    "question": "Which operating systems are supported when installing SAP HANA cockpit on IBM Power hardware?",
-    "options": [
-      "SUSE Linux Enterprise Server (SLES)",
-      "Ubuntu Server (UBSE)",
-      "Slackware Linux (SLLI)",
-      "Red Hat Enterprise Linux (RHEL)"
-    ],
-    "correctAnswer": [
-      "SUSE Linux Enterprise Server (SLES)",
-      "Red Hat Enterprise Linux (RHEL)"
-    ]
-  },
-  {
-    "question": "What are the advantages of using the delta merge in the memory management of the column store?",
-    "options": [
-      "Partial loading is possible in the delta storage",
-      "Highly compressed data in the main storage to realize read optimization",
-      "High write performance by implementing a delta storage mechanism, which uses only basic compression",
-      "Write operations only affect the delta storage but not the main storage"
-    ],
-    "correctAnswer": [
-      "Highly compressed data in the main storage to realize read optimization",
-      "High write performance by implementing a delta storage mechanism, which uses only basic compression",
-      "Write operations only affect the delta storage but not the main storage"
-    ]
-  },
-  {
-    "question": "Which of the following actions can be audited by SAP HANA?",
-    "options": [
-      "Changes to system configuration",
-      "Create or drop user, and create or drop role"
-    ],
-    "correctAnswer": [
-      "Changes to system configuration",
-      "Create or drop user, and create or drop role"
-    ]
-  },
-  {
-    "question": "What is the best location to use when importing data when the file size is larger than 1GB?",
-    "options": [
-      "SAP HANA host.",
-      "A Samba share.",
-      "Local computer.",
-      "SAP HANA cloud."
-    ],
-    "correctAnswer": "SAP HANA host."
-  },
-  {
-    "question": "Which of the following recovery types is not supported for delta backups?",
-    "options": [
-      "Recover the database to its most recent state.",
-      "Recover the database to a specific data backup.",
-      "Recover the database to a specific point in time."
-    ],
-    "correctAnswer": "Recover the database to a specific data backup."
-  },
-  {
-    "question": "Which certified hardware components are listed on the SAP HANA hardware directory?",
-    "options": [
-      "Enterprise storage systems",
-      "Network switches",
-      "Enterprise backup solutions",
-      "Appliances"
-    ],
-    "correctAnswer": [
-      "Enterprise storage systems",
-      "Appliances"
-    ]
-  },
-  {
-    "question": "Which resource can you dynamically influence using workload classes?",
-    "options": [
-      "Statement commit rate limit",
-      "Statement thread limit",
-      "statement IO throughput limit",
-      "Statement memory limit"
-    ],
-    "correctAnswer": [
-      "Statement thread limit",
-      "Statement memory limit"
-    ]
-  },
-  {
-    "question": "To diagnose backup errors, you can use the backup.log and backint.log files.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "True"
-  },
-  {
-    "question": "Which schema stores the historical performance data of SAP HANA?",
-    "options": [
-      "_SYS_TELEMETRY",
-      "_SYS_EPM_DATA",
-      "_SYS_BI",
-      "_SYS_STATISTICS"
-    ],
-    "correctAnswer": "_SYS_STATISTICS"
-  },
-  {
-    "question": "The creation of storage snapshots has a big impact on the system, and recovery from storage snapshots takes longer.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "False"
-  },
-  {
-    "question": "Which tools can you use to update SAP HANA cockpit?",
-    "options": [
-      "hdblcm",
-      "SUM",
-      "SWPM",
-      "hdblcmgui"
-    ],
-    "correctAnswer": [
-      "hdblcm",
-      "hdblcmgui"
-    ]
-  },
-  {
-    "question": "Under which user runs the local secure store (LSS) on the SAP HANA server?",
-    "options": [
-      "SYSTEM",
-      "<sid>crypt",
-      "<sid>adm",
-      "sapadm"
-    ],
-    "correctAnswer": "<sid>crypt"
-  },
-  {
-    "question": "During an SAP HANA installation, which operating system user account is assigned to the trusted local secure store (LSS)?",
-    "options": [
-      "<sid>adm",
-      "sapadm",
-      "sapssl",
-      "<sid>crypt"
-    ],
-    "correctAnswer": "<sid>crypt"
-  },
-  {
-    "question": "How does the SAP HANA database organize the storage of column store data on the disk volume?",
-    "options": [
-      "Pages with a fixed size of 64 MB",
-      "Pages with sizes from 4 KB to 16 MB",
-      "Pages with a fixed size of 16 KB, which are arranged in superblocks of 64 MB",
-      "Pages with sizes from 4 KB to 16 MB, which are arranged in superblocks of 64 MB"
-    ],
-    "correctAnswer": "Pages with sizes from 4 KB to 16 MB, which are arranged in superblocks of 64 MB"
-  },
-  {
-    "question": "Which SAP HANA lifecycle management tools can be used to install the SAP HANA database system?",
-    "options": [
-      "hdblcm",
-      "Resident hdblcm",
-      "hdblcmweb",
-      "hdbupd"
-    ],
-    "correctAnswer": "hdblcm"
-  },
-  {
-    "question": "Which of the following tools can be used for user administration?",
-    "options": [
-      "Resident hdblcm",
-      "SAP Identity Management",
-      "SAP HANA cockpit",
-      "hdbsql"
-    ],
-    "correctAnswer": [
-      "SAP Identity Management",
-      "SAP HANA cockpit",
-      "hdbsql"
-    ]
-  },
-  {
-    "question": "Which users are able to start and stop a distributed SAP HANA database system?",
-    "options": [
-      "sapadm",
-      "<sid>adm",
-      "root",
-      "SYSTEM"
-    ],
-    "correctAnswer": [
-      "<sid>adm",
-      "root"
-    ]
-  },
-  {
-    "question": "Which of the following SAP HANA license key types locks down the system when the current memory consumption of SAP HANA exceeds the licensed amount of memory?",
-    "options": [
-      "Unenforced license key",
-      "Temporary license key",
-      "Enforced license key"
-    ],
-    "correctAnswer": "Enforced license key"
-  },
-  {
-    "question": "Which protocol is used by the statistics service to collects statistical and performance information?",
-    "options": [
-      "MDX",
-      "JSON",
+      "End-to-end",
+      "Kernel profiler",
       "SQL",
-      "SNMP"
+      "Performance trace"
     ],
-    "correctAnswer": "SQL"
+    "correctAnswer": "Kernel profiler"
   },
   {
-    "question": "Which of the following administration tools provide the ability for central landscape management?",
+    "question": "You want to compare and analyze session-specific data. In what format can you save data sets from the SAP HANA cockpit sessions app? Note: There are 3 correct answers to this question.",
     "options": [
-      "DBA Cockpit",
-      "SAP HANA hdbsql",
-      "SAP HANA studio",
-      "SAP Landscape Management"
+      "HTML file",
+      "XML file",
+      "TXT file",
+      "JSON file",
+      "CSV file"
     ],
-    "correctAnswer": [
-      "DBA Cockpit",
-      "SAP Landscape Management"
-    ]
+    "correctAnswer": ["HTML file", "TXT file", "CSV file"]
   },
   {
-    "question": "When a registered SAP HANA resource is offline, the version number 0.00.000.00.0 (UNKNOWN) is displayed on the Database Directory page of SAP HANA cockpit to indicate an improper shutdown.",
+    "question": "What can you store in the statement library? Note: There are 2 correct answers to this question.",
     "options": [
-      "False",
-      "True"
+      "The executed statements trace",
+      "Your personal stored procedures",
+      "Your personal SQL scripts",
+      "The SAP SQL statement collection"
     ],
-    "correctAnswer": "False"
+    "correctAnswer": ["Your personal SQL scripts", "The SAP SQL statement collection"]
   },
   {
-    "question": "You can only generate the full system information dump file using the SAP HANA cockpit.",
+    "question": "From which system views can you export content when using the Performance Monitor app? Note: There are 3 correct answers to this question.",
     "options": [
-      "True",
-      "False"
+      "SYS.M_WORKLOAD",
+      "SYS.M_SERVICE_STATISTICS",
+      "SYS.M_LOAD_HISTORY_HOST",
+      "SYS.M_SERVICES",
+      "SYS.M_DATABASE"
     ],
-    "correctAnswer": "False"
+    "correctAnswer": ["SYS.M_LOAD_HISTORY_HOST", "SYS.M_SERVICES", "SYS.M_DATABASE"]
   },
   {
-    "question": "Which inter-service communication properties binds the processes to entered address only, and to all local host interfaces?",
+    "question": "What is the purpose of the statement library in the SAP HANA database explorer? Note: There are 2 correct answers to this question.",
     "options": [
-      "Local",
-      "Global",
-      "Internal"
+      "To execute scripts from the SQL statement collection for SAP HANA",
+      "To collect all the executed SQL statements and generate a searchable library list",
+      "To share custom SQL scripts with the whole administration team",
+      "To determine special database information not available in the SAP HANA cockpit"
     ],
-    "correctAnswer": "Internal"
+    "correctAnswer": ["To execute scripts from the SQL statement collection for SAP HANA", "To determine special database information not available in the SAP HANA cockpit"]
   },
   {
-    "question": "In your backup cycle, you can use daily fallback snapshots.",
+    "question": "Which properties can you change in the Alert Definitions app? Note: There are 3 correct answers to this question.",
     "options": [
-      "False",
-      "True"
+      "The interval settings",
+      "The proposed solution",
+      "The category",
+      "The schedule",
+      "The thresholds"
     ],
-    "correctAnswer": "False"
+    "correctAnswer": ["The interval settings", "The schedule", "The thresholds"]
   },
   {
-    "question": "In SAP HANA, the database administrator can't manually unload table data.",
+    "question": "Which output channels can the SAP Alert Notification service for SAP BTP use for notification actions? Note: There are 2 correct answers to this question.",
     "options": [
-      "True",
-      "False"
+      "Slack",
+      "Microsoft Teams",
+      "WhatsApp",
+      "Signal"
     ],
-    "correctAnswer": "False"
+    "correctAnswer": ["Slack", "Microsoft Teams"]
   },
   {
-    "question": "In which SAP HANA server processes does the statistics scheduler thread run?",
+    "question": "What tools can you use to view the expensive statement trace file? Note: There are 2 correct answers to this question.",
     "options": [
-      "Index server",
+      "SAP HANA Cloud Central",
+      "SAP BTP cockpit",
+      "SAP HANA cockpit",
+      "SAP HANA database explorer"
+    ],
+    "correctAnswer": ["SAP HANA cockpit", "SAP HANA database explorer"]
+  },
+  {
+    "question": "Which services are shared in the Manage Services app in the SAP HANA Cloud database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Compile server",
       "Name server",
-      "SAP start service",
+      "DP server",
+      "DI server"
+    ],
+    "correctAnswer": ["Compile server", "Name server"]
+  },
+  {
+    "question": "What can you check with the SAP HANA hardware and cloud measurement tool (HCMT)? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Linux kernel information",
+      "Cloud connector status",
+      "CPU states",
+      "NUMA memory bandwidth test"
+    ],
+    "correctAnswer": ["CPU states", "NUMA memory bandwidth test"]
+  },
+  {
+    "question": "Which tools are available in SAP HANA Cloud Central? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Service Plan Assignment editor",
+      "Start Recovery wizard",
+      "Manage Configuration editor",
+      "Cloud Foundry CLI"
+    ],
+    "correctAnswer": ["Start Recovery wizard", "Manage Configuration editor"]
+  },
+  {
+    "question": "Which feature do you use to dynamically control SAP HANA database workloads per client session?",
+    "options": [
+      "Workload classes",
+      "Workload analysis",
+      "Admission control",
+      "Load unit configuration"
+    ],
+    "correctAnswer": "Workload classes"
+  },
+  {
+    "question": "What is the maximum number of replicas you can configure for SAP HANA Cloud?",
+    "options": [
+      "1",
+      "3",
+      "2",
+      "4"
+    ],
+    "correctAnswer": "2"
+  },
+  {
+    "question": "What do you need in a multitenant database container (MDC) system to run queries across tenant databases? Note: There are 2 correct answers to this question.",
+    "options": [
+      "The user in the source system must have sufficient privileges in the target database.",
+      "The cross-tenant database communication must be explicitly activated.",
+      "The user in the source system must be associated with a user in the target database.",
+      "The bidirectional communication channel must be allowed."
+    ],
+    "correctAnswer": ["The user in the source system must have sufficient privileges in the target database.", "The cross-tenant database communication must be explicitly activated."]
+  },
+  {
+    "question": "How can you view the audit trail in the SAP HANA Cloud, SAP HANA database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Using the expensive statements trace in the SAP HANA cockpit",
+      "Using the Auditing card in the SAP HANA cockpit",
+      "Using the SQL Console in the SAP HANA database explorer",
+      "Using the kernel profiler trace in the SAP HANA database explorer"
+    ],
+    "correctAnswer": ["Using the Auditing card in the SAP HANA cockpit", "Using the SQL Console in the SAP HANA database explorer"]
+  },
+  {
+    "question": "Which options for Audited Action Status are available in the SAP HANA Cloud, SAP HANA database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Critical",
+      "Enabled",
+      "All",
+      "Unsuccessful"
+    ],
+    "correctAnswer": ["All", "Unsuccessful"]
+  },
+  {
+    "question": "Which audit trail target is used by default in the SAP HANA Cloud, SAP HANA database?",
+    "options": [
+      "Database table",
+      "Kernel trace",
+      "Linux syslog",
+      "CSV text file"
+    ],
+    "correctAnswer": "Database table"
+  },
+  {
+    "question": "What is the default single sign-on method when using hdbsql?",
+    "options": [
+      "Token based",
+      "SAML based",
+      "Kerberos based",
+      "Certificate based"
+    ],
+    "correctAnswer": "SAML based"
+  },
+  {
+    "question": "Which container types are available in SAP HANA Deployment Infrastructure (HDI)? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Docker",
+      "Kubernetes",
+      "Runtime",
+      "Design time"
+    ],
+    "correctAnswer": ["Runtime", "Design time"]
+  },
+  {
+    "question": "Which SAP HANA security tasks can be performed in combination with a Lightweight Directory Access Protocol (LDAP) server? Note: There are 2 correct answers to this question.",
+    "options": [
+      "User group assignment",
+      "User creation",
+      "Password policy configuration",
+      "Role assignment"
+    ],
+    "correctAnswer": ["User creation", "Role assignment"]
+  },
+  {
+    "question": "Who owns all database objects deployed using the SAP HANA Deployment Infrastructure (HDI)?",
+    "options": [
+      "The user who created the role",
+      "The DBADMIN user of the tenant database",
+      "The_SYS_REPO technical user",
+      "The container-specific technical user"
+    ],
+    "correctAnswer": "The container-specific technical user"
+  },
+  {
+    "question": "What cryptographic libraries are supported in SAP HANA? Note: There are 2 correct answers to this question.",
+    "options": [
+      "CommonCryptoLib",
+      "Libgcrypt",
+      "OpenSSL",
+      "LibreSSL"
+    ],
+    "correctAnswer": ["CommonCryptoLib", "OpenSSL"]
+  },
+  {
+    "question": "How are savepoints triggered? Note: There are 2 correct answers to this question.",
+    "options": [
+      "By performing a delta merge",
+      "By issuing a transactional commit",
+      "By a database soft shutdown",
+      "By performing a database backup"
+    ],
+    "correctAnswer": ["By a database soft shutdown", "By performing a database backup"]
+  },
+  {
+    "question": "Which hardware KPIs do you need to size before performing a tailored data center integration (TDI) installation for a productive SAP HANA database system? Note: There are 2 correct answers to this question.",
+    "options": [
+      "DRAM required for the static data memory area",
+      "Total disk space required for the log volume",
+      "Persistent memory (PMEM) required for backups",
+      "Network bandwidth for the storage zone"
+    ],
+    "correctAnswer": ["DRAM required for the static data memory area", "Total disk space required for the log volume"]
+  },
+  {
+    "question": "In which scenario do you need SAP expert sizing? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Migrating existing SAP ERP systems from AnyDB to run on SAP HANA",
+      "Customer is new to SAP ERP applications and the SAP HANA database system",
+      "Consolidating multiple SAP ERP source systems into one SAP ERP system on SAP HANA",
+      "Carving out SAP ERP functionality from the source system to the SAP ERP system on SAP HANA"
+    ],
+    "correctAnswer": ["Consolidating multiple SAP ERP source systems into one SAP ERP system on SAP HANA", "Carving out SAP ERP functionality from the source system to the SAP ERP system on SAP HANA"]
+  },
+  {
+    "question": "Which database storage technology does native storage extension utilize in SAP HANA Cloud?",
+    "options": [
+      "Dynamic tiering",
+      "Disk-based",
+      "In-memory",
+      "Extension node"
+    ],
+    "correctAnswer": "Disk-based"
+  },
+  {
+    "question": "What possibilities do you have when upgrading an SAP HANA Cloud, SAP HANA database instance? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Upgrade the replica first",
+      "Select the version to install",
+      "Upgrade without restart",
+      "Revert to a previous version"
+    ],
+    "correctAnswer": ["Select the version to install", "Upgrade without restart"]
+  },
+  {
+    "question": "Where does the SAP HANA Cloud, SAP HANA database run in SAP BTP?",
+    "options": [
+      "Kubernetes container",
+      "SAP HANA Cloud Central",
+      "Cloud Foundry runtime",
+      "Kyma runtime"
+    ],
+    "correctAnswer": "Kubernetes container"
+  },
+  {
+    "question": "Which object types are stored in an SAP HANA catalog? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Cubes",
+      "HDI containers",
+      "Agents",
+      "Cockpit roles",
+      "JSON collections"
+    ],
+    "correctAnswer": ["Cubes", "Agents", "JSON collections"]
+  },
+  {
+    "question": "In SAP HANA Cloud, which tasks are handled by the cloud provider? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Tuning the database to run optimally on the underlying operating system and hardware",
+      "Backing up the operating system and the database software",
+      "Installing, configuring, and upgrading the operating system",
+      "Sizing, provisioning, and monitoring the database",
+      "Managing users, roles, and permissions in the database"
+    ],
+    "correctAnswer": ["Tuning the database to run optimally on the underlying operating system and hardware", "Backing up the operating system and the database software", "Installing, configuring, and upgrading the operating system"]
+  },
+  {
+    "question": "Which services can you stop in the SAP HANA cockpit from the SYSTEMDB Manage Services app? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Web dispatcher",
+      "Index server",
+      "XS engine",
       "Compile server"
     ],
-    "correctAnswer": "Name server"
+    "correctAnswer": ["Index server", "Compile server"]
   },
   {
-    "question": "Which of the following system views provides violation information about unsupported values for configuration parameters in your SAP HANA database system?",
+    "question": "A new version of SAP HANA Cloud, SAP HANA database is available as of today. If you do NOT perform the upgrade manually, how much time do you have before your database will be automatically upgraded to the next version?",
     "options": [
-      "M_LANDSCAPE_HOST_CONFIGURATION",
-      "M_CONFIGURATION_PARAMETER_VALUES",
-      "M_BACKUP_CONFIGURATION",
-      "CONFIGURATION_PARAMETER_PROPERTIES"
+      "2 weeks",
+      "3 months",
+      "1 year",
+      "7 months"
     ],
-    "correctAnswer": "M_CONFIGURATION_PARAMETER_VALUES"
+    "correctAnswer": "7 months"
   },
   {
-    "question": "What parts of the SAP HANA database system can be backed up and restored separately?",
+    "question": "Which file systems are supported for the data and log volumes of the SAP HANA 2.0 database system? Note: There are 2 correct answers to this question.",
     "options": [
-      "Schemas",
-      "Tenants",
-      "Virtual tables",
-      "Configuration files"
+      "XFS",
+      "Btrfs",
+      "GPFS",
+      "EXT4"
+    ],
+    "correctAnswer": ["XFS", "GPFS"]
+  },
+  {
+    "question": "Which storage tier is used to manage rarely changing, persistent data?",
+    "options": [
+      "Replica",
+      "Data lake",
+      "Native storage extension",
+      "WORM device"
+    ],
+    "correctAnswer": "Native storage extension"
+  },
+  {
+    "question": "What is the only assignable privilege for the Privileges on Users type?",
+    "options": [
+      "ATTACH DEBUGGER",
+      "STRUCTUREDPRIVILEGE ADMIN",
+      "CATALOG READ",
+      "AUDIT OPERATOR"
+    ],
+    "correctAnswer": "ATTACH DEBUGGER"
+  },
+  {
+    "question": "Which system privileges are required for administering tenant databases when connected to the system database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "BACKUP ADMIN",
+      "DATABASE ADMIN",
+      "DATA ADMIN",
+      "MONITOR ADMIN"
+    ],
+    "correctAnswer": ["BACKUP ADMIN", "DATABASE ADMIN"]
+  },
+  {
+    "question": "You want to change a standard user account into a restricted user account. Which attributes do you need to adjust? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Disable ODBC/JDBC Access must be set to \"Yes\".",
+      "Authorization method must be set to \"LDAP\".",
+      "Creation of Objects in Own Schema must be set to \"No\".",
+      "User Group must be set to \"Restricted\".",
+      "PUBLIC role must be set to \"No\"."
+    ],
+    "correctAnswer": ["Creation of Objects in Own Schema must be set to \"No\".", "User Group must be set to \"Restricted\".", "PUBLIC role must be set to \"No\"."]
+  },
+  {
+    "question": "Which options can you use when creating a role in the SAP HANA Cloud, SAP HANA database? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Assign User Groups",
+      "Create Role in Schema",
+      "Assign to Role Group",
+      "Assign LDAP Groups",
+      "Create Group Admin"
+    ],
+    "correctAnswer": ["Create Role in Schema", "Assign to Role Group", "Create Group Admin"]
+  },
+  {
+    "question": "Which privilege types are available in SAP HANA Cloud? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Analytic",
+      "System",
+      "Object",
+      "Application",
+      "Package"
+    ],
+    "correctAnswer": ["Analytic", "System", "Object"]
+  },
+  {
+    "question": "Which database objects can you manipulate if you have the object privilege activity ALL PRIVILEGES? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Functions",
+      "Views",
+      "Procedures",
+      "Schemas"
+    ],
+    "correctAnswer": ["Views", "Schemas"]
+  },
+  {
+    "question": "What can you assign to a user with the User Management app in the SAP HANA cockpit? Note: There are 2 correct answers to this question.",
+    "options": [
+      "LDAP identity provider",
+      "Scopes",
+      "LDAP authorization mode",
+      "User group"
+    ],
+    "correctAnswer": ["LDAP authorization mode", "User group"]
+  },
+  {
+    "question": "What can you assign to a user group in the SAP HANA Cloud, SAP HANA database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Password policies",
+      "Users",
+      "Permissions",
+      "Roles"
+    ],
+    "correctAnswer": ["Password policies", "Users"]
+  },
+  {
+    "question": "Which privileges are required to create the COCKPIT MONITOR technical user? Note: There are 2 correct answers to this question.",
+    "options": [
+      "MONITOR ADMIN",
+      "SELECT on the _SYS_TELEMETRY schema",
+      "CATALOG READ",
+      "SELECT on the_SYS_STATISTICS schema"
+    ],
+    "correctAnswer": ["CATALOG READ", "SELECT on the_SYS_STATISTICS schema"]
+  },
+  {
+    "question": "Which user is assigned by default when you provision a data lake in SAP HANA Cloud?",
+    "options": [
+      "SYSTEM",
+      "DBADMIN",
+      "COCKPIT MONITOR",
+      "HDLADMIN"
+    ],
+    "correctAnswer": "DBADMIN"
+  },
+  {
+    "question": "You want to prevent changes to system properties in tenant databases. Which configuration file stores the blocklisted properties?",
+    "options": [
+      "multidb.ini",
+      "attributes.ini",
+      "global.ini",
+      "indexserver.ini"
+    ],
+    "correctAnswer": "multidb.ini"
+  },
+  {
+    "question": "Which actions can you perform on an SAP HANA Cloud, SAP HANA database using the Cloud Foundry CLI? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Recover instance",
+      "Change instance backup schedule",
+      "Decrease data volume size",
+      "Create instance"
+    ],
+    "correctAnswer": ["Recover instance", "Create instance"]
+  },
+  {
+    "question": "You want to use the multi-environment database administration tools to administer an SAP HANA Cloud, SAP HANA database instance. Which SAP BTP entitlement service plans do you need? Note: There are 2 correct answers to this question.",
+    "options": [
+      "hana",
+      "relational data lake",
+      "multi-environment tools",
+      "tools"
+    ],
+    "correctAnswer": ["hana", "tools"]
+  },
+  {
+    "question": "Which tool do you use to execute SQL queries on the SAP HANA Cloud database?",
+    "options": [
+      "SQLScript",
+      "SQL Console",
+      "HDBSQL",
+      "SQL Editor"
+    ],
+    "correctAnswer": "SQL Console"
+  },
+  {
+    "question": "How can you start an SAP HANA Cloud database instance using the command line?",
+    "options": [
+      "alter system start database <DATABASE_NAME>",
+      "cf update-service <SERVICE_INSTANCE> -c \"{ \"data\": {\"service Stopped\": false}}\"",
+      "sapcontrol -nr <INSTANCE_NUMBER>-function StartSystem",
+      "of start <APPLICATION_NAME>"
+    ],
+    "correctAnswer": "sapcontrol -nr <INSTANCE_NUMBER>-function StartSystem"
+  },
+  {
+    "question": "Which tools can you use to disable tenant database functionalities? Note: There are 2 correct answers to this question.",
+    "options": [
+      "resident hdblcm",
+      "Manage Database Configuration",
+      "hdbuserstore",
+      "Manage Restricted Features"
+    ],
+    "correctAnswer": ["resident hdblcm", "Manage Database Configuration"]
+  },
+  {
+    "question": "Which system privilege must you have to restrict features for tenant databases in the SAP HANA cockpit?",
+    "options": [
+      "INIFILE ADMIN",
+      "RESOURCE ADMIN",
+      "SERVICE ADMIN",
+      "DATABASE ADMIN"
+    ],
+    "correctAnswer": "INIFILE ADMIN"
+  },
+  {
+    "question": "Which services can you stop in the SAP HANA cockpit from the SYSTEMDB Manage Services app? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Web dispatcher",
+      "Index server",
+      "XS engine",
+      "Compile server"
+    ],
+    "correctAnswer": ["Web dispatcher", "Compile server"]
+  },
+  {
+    "question": "When using the SAP HANA cockpit, which user credentials do you need to stop the SAP HANA database system? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Cockpit User",
+      "sap<sid>",
+      "Database User",
+      "Root",
+      "<sid>adm"
+    ],
+    "correctAnswer": ["Cockpit User", "Database User", "<sid>adm"]
+  },
+  {
+    "question": "Where can you start/stop an SAP HANA Cloud, SAP HANA database?",
+    "options": [
+      "SAP HANA HDBSQL",
+      "SAP BTP cockpit",
+      "SAP HANA Cloud Central",
+      "SAP HANA cockpit"
+    ],
+    "correctAnswer": "SAP HANA Cloud Central"
+  },
+  {
+    "question": "From which sources can you import catalog objects when using the SAP HANA database explorer? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Data lake files",
+      "Local computer",
+      "Google Cloud Storage",
+      "HPE GreenLake",
+      "IBM public cloud"
+    ],
+    "correctAnswer": ["Data lake files", "Local computer", "Google Cloud Storage"]
+  },
+  {
+    "question": "What happens when you rename a tenant database in the SAP HANA cockpit? Note: There are 2 correct answers to this question.",
+    "options": [
+      "The tenant database is stopped.",
+      "The tenant database backups are renamed.",
+      "The tenant database trace directory is renamed.",
+      "The tenant database is unloaded from memory."
+    ],
+    "correctAnswer": ["The tenant database is stopped.", "The tenant database trace directory is renamed."]
+  },
+  {
+    "question": "Which role do you need in order to assign users to groups in the SAP HANA cockpit?",
+    "options": [
+      "Cockpit Administrator role",
+      "Cockpit Database Administrator role",
+      "Cockpit User Administrator rolle",
+      "Cockpit User role"
+    ],
+    "correctAnswer": "Cockpit User Administrator rolle"
+  },
+  {
+    "question": "Which user is automatically created when you add a data lake to an SAP HANA Cloud, SAP HANA database?",
+    "options": [
+      "HDLADMIN",
+      "SAPSA",
+      "DBA",
+      "DBADMIN"
+    ],
+    "correctAnswer": "HDLADMIN"
+  },
+  {
+    "question": "Which actions can you only choose when using the resident HDBLCM tool as root user? Note: There are 2 correct answers to this question.",
+    "options": [
+      "rename_system",
+      "unregister_system",
+      "update_host",
+      "configure_internal_network"
+    ],
+    "correctAnswer": ["rename_system", "unregister_system"]
+  },
+  {
+    "question": "You are using the SAP HANA database lifecycle manager (HDBLCM) from the SAP HANA installation media. Which tasks can you perform from the command line? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Update the SAP HANA database system and its components.",
+      "Rename the SAP HANA database system.",
+      "Uninstall the SAP HANA database system and its components.",
+      "Extract the SAP HANA database system components."
+    ],
+    "correctAnswer": ["Update the SAP HANA database system and its components.", "Extract the SAP HANA database system components."]
+  },
+  {
+    "question": "Which types of SAP HANA Cloud instance can you provision in an SAP BTP account? Note: There are 2 correct answers to this question.",
+    "options": [
+      "SAP HANA database",
+      "SAP SQL Anywhere",
+      "SAP IQ",
+      "Data lake"
+    ],
+    "correctAnswer": ["SAP HANA database", "Data lake"]
+  },
+  {
+    "question": "Which parameters are mandatory when using the HDBLCM tool in batch mode, to install the SAP HANA database system? Note: There are 2 correct answers to this question.",
+    "options": [
+      "SAP HANA system ID (SID)",
+      "Password of user sapadm",
+      "Data and log path",
+      "Installation path"
+    ],
+    "correctAnswer": ["SAP HANA system ID (SID)", "Password of user sapadm"]
+  },
+  {
+    "question": "Which data stores are activated by default when you provision an SAP HANA Cloud, SAP HANA database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Native storage extension",
+      "In-memory",
+      "Data lake",
+      "Hadoop distributed file system"
+    ],
+    "correctAnswer": ["Native storage extension", "In-memory"]
+  },
+  {
+    "question": "What attributes can you control when creating an SAP HANA Cloud, data lake instance? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Automatic backup creation",
+      "Availability zone",
+      "Number of coordinators",
+      "Compatibility with SAP IQ",
+      "Compatibility with Apache Hadoop"
+    ],
+    "correctAnswer": ["Availability zone", "Number of coordinators", "Compatibility with SAP IQ"]
+  },
+  {
+    "question": "Which resources will be changed when you scale down an SAP HANA Cloud, SAP HANA database instance? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Replicas",
+      "vCPUs",
+      "Storage",
+      "Memory"
+    ],
+    "correctAnswer": ["vCPUs", "Memory"]
+  },
+  {
+    "question": "What options do you have when deploying an SAP HANA Cloud, SAP HANA database with an integrated data lake? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Create an SAP HANA Cloud database with a separate data lake.",
+      "Create an SAP HANA Cloud database with the data lake on premise.",
+      "Create an SAP HANA Cloud database and later add a data lake.",
+      "Create an SAP HANA Cloud database and include a data lake in one step."
+    ],
+    "correctAnswer": ["Create an SAP HANA Cloud database and later add a data lake.", "Create an SAP HANA Cloud database and include a data lake in one step."]
+  },
+  {
+    "question": "When performing a standard SAP HANA database system installation, which users will be created or validated by default during that installation? Note: There are 3 correct answers to this question.",
+    "options": [
+      "SYSTEM",
+      "syb<sid>",
+      "SAP<SID>",
+      "sapadm",
+      "<sid>crypt"
+    ],
+    "correctAnswer": ["SYSTEM", "sapadm", "<sid>crypt"]
+  },
+  {
+    "question": "You want to implement a 28-day backup cycle. Which scenario uses the least storage?",
+    "options": [
+      "Full back up, differential backup, log backup",
+      "Incremental backup, log backup",
+      "Full back up, log backup",
+      "Full back up, incremental backup, log backup"
+    ],
+    "correctAnswer": "Full back up, incremental backup, log backup"
+  },
+  {
+    "question": "What is one of the backup options provided by the SAP HANA database?",
+    "options": [
+      "Time travel",
+      "Single table backup",
+      "Fallback snapshots",
+      "Data snapshots"
+    ],
+    "correctAnswer": "Data snapshots"
+  },
+  {
+    "question": "How can you ensure that a consistent database status is saved using data snapshots?",
+    "options": [
+      "Execute the hdbbackupdiag tool.",
+      "Create a fallback snapshot.",
+      "Create an internal database snapshot.",
+      "Trigger a savepoint."
+    ],
+    "correctAnswer": "Create an internal database snapshot."
+  },
+  {
+    "question": "How long are SAP HANA Cloud, SAP HANA database backups retained by default?",
+    "options": [
+      "3 weeks",
+      "2 weeks",
+      "1 week",
+      "4 weeks"
+    ],
+    "correctAnswer": "2 weeks"
+  },
+  {
+    "question": "Which tool do you use to reinitialize a non-recoverable system database?",
+    "options": [
+      "hdbrecovercheck",
+      "recoverSys.py",
+      "hdbmdcutil",
+      "RecoverUtil.py"
+    ],
+    "correctAnswer": "recoverSys.py"
+  },
+  {
+    "question": "How do you initiate a recovery of your SAP HANA Cloud, SAP HANA database instance?",
+    "options": [
+      "In an SQL Console, execute the RECOVER DATABASE statement with the timestamp.",
+      "In SAP HANA Cloud Central, select the Start Recovery option and set the timestamp.",
+      "In an SAP BTP CLI, execute the RECOVER DATABASE command with the timestamp.",
+      "In the SAP HANA cockpit, select the Start Recovery option and set the timestamp."
+    ],
+    "correctAnswer": "In SAP HANA Cloud Central, select the Start Recovery option and set the timestamp."
+  },
+  {
+    "question": "Which backup types can you schedule using the backup scheduler in the SAP HANA cockpit? Note: There are 3 correct answers to this question.",
+    "options": [
+      "Data snapshot",
+      "Incremental backup",
+      "Complete backup",
+      "Log backup",
+      "Differential backup"
     ],
     "correctAnswer": [
-      "Tenants",
-      "Configuration files"
+      "Incremental backup",
+      "Complete backup",
+      "Differential backup"]
+  },
+  {
+    "question": "In which situations can you resume the failed recovery of your productive SAP HANA tenant database? Note: There are 2 correct answers to this question.",
+    "options": [
+      "An aborted recovery of a delta data backup",
+      "An aborted recovery of a log backup",
+      "An aborted recovery of a complete data backup",
+      "An aborted recovery of the catalog backup"
+    ],
+    "correctAnswer": [
+      "An aborted recovery of a delta data backup",
+      "An aborted recovery of a log backup"]
+  },
+  {
+    "question": "Which scenarios are supported for a database copy using backup and recovery from a source machine to a target machine? Note: There are 2 correct answers to this question.",
+    "options": [
+      "The source system has more nodes than the target system.",
+      "The source system and target system have different SIDS.",
+      "The source system and target system have different CPU architecture.",
+      "The source system release version is higher than the target system."
+    ],
+    "correctAnswer": [
+      "The source system and target system have different SIDS.",
+      "The source system and target system have different CPU architecture."
     ]
   },
   {
-    "question": "In SAP HANA databases, user groups are mandatory and have to be used by customers.",
+    "question": "Which prerequisites must be fulfilled when recovering a tenant database? Note: There are 2 correct answers to this question.",
     "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "False"
-  },
-  {
-    "question": "In which circumstances do you create a column store table?",
-    "options": [
-      "When aggregations or fast search are required",
-      "When the table has a large number of columns",
-      "When accessing complete records",
-      "When the calculations are based on a small number of columns"
+      "The tenant database must be stopped before the recovery starts.",
+      "The logon credentials of the system database user must be available.",
+      "The logon credentials of the <sid>adm user must be available.",
+      "The whole system must be shut down before the recovery starts."
     ],
     "correctAnswer": [
-      "When aggregations or fast search are required",
-      "When the table has a large number of columns",
-      "When the calculations are based on a small number of columns"
+      "The tenant database must be stopped before the recovery starts.",
+      "The logon credentials of the <sid>adm user must be available."
     ]
-  },
-  {
-    "question": "The database migration option (DMO) is part of which tool?",
-    "options": [
-      "Software Update Manager (SUM)",
-      "Support Package Manager (SPAM)",
-      "Software Provisioning Manager (SWPM)",
-      "SAP Add-On Installation Tool (SAINT)"
-    ],
-    "correctAnswer": "Software Update Manager (SUM)"
-  },
-  {
-    "question": "What is the minimum space requirement for the Data Volume?",
-    "options": [
-      "3 * RAM (Appliance)",
-      "Min. 0.5 * RAM",
-      "1.2 * RAM (TDI)",
-      "Min. 1 * RAM"
-    ],
-    "correctAnswer": [
-      "3 * RAM (Appliance)",
-      "1.2 * RAM (TDI)"
-    ]
-  },
-  {
-    "question": "For which system landscape types can you use the SAP HANA Hardware and Cloud Measurement tools to determine if your hardware meets the minimum performance criteria required to run SAP HANA in production use?",
-    "options": [
-      "A single host setup.",
-      "A scale-out setup.",
-      "A system replication setup.",
-      "A standby host setup."
-    ],
-    "correctAnswer": [
-      "A single host setup.",
-      "A scale-out setup."
-    ]
-  },
-  {
-    "question": "Which backup types are delta backups in SAP HANA?",
-    "options": [
-      "Differential",
-      "Full",
-      "Incremental",
-      "Mirror"
-    ],
-    "correctAnswer": [
-      "Differential",
-      "Incremental"
-    ]
-  },
-  {
-    "question": "Which of the following traces has the default configuration status \"Active\"?",
-    "options": [
-      "Plan trace",
-      "Database trace",
-      "Performance trace",
-      "SQL trace"
-    ],
-    "correctAnswer": "Database trace"
-  },
-  {
-    "question": "Assume the following scenario: An SAP HANA system is configured for the parameter savepoint_interval_s with the value 300s on the DEFAULT layer, but the SYSTEM layer value is 450s, and as a third parameter value, the included tenant is configured on the DATABASE layer with the value 600s. Which value will be taken into account during runtime for the tenant database?",
-    "options": [
-      "The SYSTEM layer value 450s, because a tenant-specific savepoint parameters are not allowed.",
-      "The DATABASE layer value 600s, because it overrides SYSTEM and DEFAULT layer values.",
-      "The DEFAULT layer value 300s, because it is recommended by SAP and ignores all other values."
-    ],
-    "correctAnswer": "The DATABASE layer value 600s, because it overrides SYSTEM and DEFAULT layer values"
-  },
-  {
-    "question": "When connected to the SAP HANA database, which HDBSQL command displays general information about the database?",
-    "options": [
-      "\\di",
-      "\\s",
-      "\\a",
-      "\\c"
-    ],
-    "correctAnswer": "\\s"
-  },
-  {
-    "question": "SAP HANA cockpit can only be installed on dedicated hardware. Choose the correct answer.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "False"
-  },
-  {
-    "question": "In the SAP HANA database explorer, as the user SYSTEM, you can access the table data in every database schema. Choose the correct answer.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "False"
-  },
-  {
-    "question": "Which is the default external SQL port number of the tenant database that is automatically created when you install a single-tenant system? Choose the correct answer.",
-    "options": [
-      "3<instance>15",
-      "3<instance>41",
-      "3<instance>13",
-      "3<instance>03"
-    ],
-    "correctAnswer": "3<instance>15"
-  },
-  {
-    "question": "Which user account is used when a tenant database connection is automatically added to the database explorer?",
-    "options": [
-      "The tenant SYSTEM user",
-      "The tenant COCKPIT_MONITOR user",
-      "Your personal SAP HANA cockpit user",
-      "Your personal SAP HANA database user"
-    ],
-    "correctAnswer": "Your personal SAP HANA database user"
-  },
-  {
-    "question": "The password policy parameters for the system database of a multiple-container system are maintained in the indexserver.ini file. Choose the correct answer.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "correctAnswer": "False"
   }
 ]
 
