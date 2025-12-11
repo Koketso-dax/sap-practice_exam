@@ -1308,7 +1308,7 @@ export const availableExams: ExamData[] = [
     questions: sapIntegrationExam,
   },
   {
-    title: "SAP DB Admin Exam",
+    title: "SAP Database Administrator Exam",
     description: "Test your knowledge on SAP Database Administration",
     questions: sapDbAdminExam,
   },

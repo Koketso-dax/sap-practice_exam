@@ -51,6 +51,7 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
     }),
   )
   const [correctAnswers, setCorrectAnswers] = useState<boolean[]>(new Array(quizData.length).fill(false))
+  const [showNavigation, setShowNavigation] = useState(false)
 
   const question = shuffledQuestions[currentQuestion]
   const isMultipleAnswer = Array.isArray(question.correctAnswer)
@@ -117,6 +118,7 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
 
   const handleQuestionClick = (index: number) => {
     setCurrentQuestion(index)
+    setShowNavigation(false)
   }
 
   const handleRestart = () => {
@@ -196,21 +198,26 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
           <CardDescription>
             Question {currentQuestion + 1} of {shuffledQuestions.length}
           </CardDescription>
+          <Button variant="outline" size="sm" onClick={() => setShowNavigation(!showNavigation)}>
+            {showNavigation ? "Hide" : "Show"} Questions
+          </Button>
         </div>
         <Progress value={progress} className="mb-4" />
-        <div className="flex flex-wrap gap-2 mb-4">
-          {shuffledQuestions.map((_, index) => (
-            <Button
-              key={index}
-              variant={currentQuestion === index ? "default" : "outline"}
-              size="sm"
-              onClick={() => handleQuestionClick(index)}
-              className={`w-10 h-10 p-0 ${answeredQuestions[index] ? "ring-2 ring-primary ring-offset-2" : ""}`}
-            >
-              {index + 1}
-            </Button>
-          ))}
-        </div>
+        {showNavigation && (
+          <div className="flex flex-wrap gap-2 mb-4 p-4 border rounded-lg bg-muted/50">
+            {shuffledQuestions.map((_, index) => (
+              <Button
+                key={index}
+                variant={currentQuestion === index ? "default" : "outline"}
+                size="sm"
+                onClick={() => handleQuestionClick(index)}
+                className={`w-10 h-10 p-0 ${answeredQuestions[index] ? "ring-2 ring-primary ring-offset-2" : ""}`}
+              >
+                {index + 1}
+              </Button>
+            ))}
+          </div>
+        )}
         <CardTitle className="text-2xl text-balance">{question.question}</CardTitle>
         {isMultipleAnswer && <CardDescription className="text-sm italic">Select all correct answers</CardDescription>}
       </CardHeader>
