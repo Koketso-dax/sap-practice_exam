@@ -32,34 +32,43 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
       })),
     )
 
-    return shuffledQs.map((q) => ({
+    const result = shuffledQs.map((q) => ({
       ...q,
       options: shuffleArray(q.options),
     }))
+
+    return result
   }, [quizData])
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [selectedAnswer, setSelectedAnswer] = useState<string | string[]>("")
   const [score, setScore] = useState(0)
   const [showResults, setShowResults] = useState(false)
   const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(new Array(quizData.length).fill(false))
-  const [userAnswers, setUserAnswers] = useState<(string | string[])[]>(new Array(quizData.length).fill(""))
+  const [userAnswers, setUserAnswers] = useState<(string | string[])[]>(
+    new Array(quizData.length).fill(null).map((_, i) => {
+      const q = shuffledQuestions[i]
+      return Array.isArray(q?.correctAnswer) ? [] : ""
+    }),
+  )
   const [correctAnswers, setCorrectAnswers] = useState<boolean[]>(new Array(quizData.length).fill(false))
 
   const question = shuffledQuestions[currentQuestion]
   const isMultipleAnswer = Array.isArray(question.correctAnswer)
+  const selectedAnswer = userAnswers[currentQuestion]
 
   const handleAnswerSelect = (answer: string) => {
-    setSelectedAnswer(answer)
+    const newUserAnswers = [...userAnswers]
+    newUserAnswers[currentQuestion] = answer
+    setUserAnswers(newUserAnswers)
   }
 
   const handleCheckboxChange = (option: string, checked: boolean) => {
     const currentAnswers = Array.isArray(selectedAnswer) ? selectedAnswer : []
-    if (checked) {
-      setSelectedAnswer([...currentAnswers, option])
-    } else {
-      setSelectedAnswer(currentAnswers.filter((a) => a !== option))
-    }
+    const newAnswers = checked ? [...currentAnswers, option] : currentAnswers.filter((a) => a !== option)
+
+    const newUserAnswers = [...userAnswers]
+    newUserAnswers[currentQuestion] = newAnswers
+    setUserAnswers(newUserAnswers)
   }
 
   const isAnswerCorrect = () => {
@@ -80,10 +89,6 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
     if (hasAnswer) {
       const isCorrect = isAnswerCorrect()
 
-      const newUserAnswers = [...userAnswers]
-      newUserAnswers[currentQuestion] = selectedAnswer
-      setUserAnswers(newUserAnswers)
-
       const newCorrectAnswers = [...correctAnswers]
       newCorrectAnswers[currentQuestion] = isCorrect
       setCorrectAnswers(newCorrectAnswers)
@@ -98,8 +103,6 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
 
       if (currentQuestion < shuffledQuestions.length - 1) {
         setCurrentQuestion(currentQuestion + 1)
-        const nextQuestion = shuffledQuestions[currentQuestion + 1]
-        setSelectedAnswer(Array.isArray(nextQuestion.correctAnswer) ? [] : "")
       } else {
         setShowResults(true)
       }
@@ -109,19 +112,24 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1)
-      const prevQuestion = shuffledQuestions[currentQuestion - 1]
-      setSelectedAnswer(Array.isArray(prevQuestion.correctAnswer) ? [] : "")
     }
+  }
+
+  const handleQuestionClick = (index: number) => {
+    setCurrentQuestion(index)
   }
 
   const handleRestart = () => {
     setCurrentQuestion(0)
-    const firstQuestion = shuffledQuestions[0]
-    setSelectedAnswer(Array.isArray(firstQuestion.correctAnswer) ? [] : "")
     setScore(0)
     setShowResults(false)
     setAnsweredQuestions(new Array(shuffledQuestions.length).fill(false))
-    setUserAnswers(new Array(shuffledQuestions.length).fill(""))
+    setUserAnswers(
+      new Array(shuffledQuestions.length).fill(null).map((_, i) => {
+        const q = shuffledQuestions[i]
+        return Array.isArray(q?.correctAnswer) ? [] : ""
+      }),
+    )
     setCorrectAnswers(new Array(shuffledQuestions.length).fill(false))
   }
 
@@ -190,6 +198,19 @@ export default function Quiz({ quizData, examTitle, onBackToSelection }: QuizPro
           </CardDescription>
         </div>
         <Progress value={progress} className="mb-4" />
+        <div className="flex flex-wrap gap-2 mb-4">
+          {shuffledQuestions.map((_, index) => (
+            <Button
+              key={index}
+              variant={currentQuestion === index ? "default" : "outline"}
+              size="sm"
+              onClick={() => handleQuestionClick(index)}
+              className={`w-10 h-10 p-0 ${answeredQuestions[index] ? "ring-2 ring-primary ring-offset-2" : ""}`}
+            >
+              {index + 1}
+            </Button>
+          ))}
+        </div>
         <CardTitle className="text-2xl text-balance">{question.question}</CardTitle>
         {isMultipleAnswer && <CardDescription className="text-sm italic">Select all correct answers</CardDescription>}
       </CardHeader>

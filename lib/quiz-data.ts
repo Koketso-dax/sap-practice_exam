@@ -693,7 +693,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "Password policy configuration",
       "Role assignment"
     ],
-    "correctAnswer": ["User creation", "Role assignment"]
+    "correctAnswer": ["User group assignment", "Role assignment"]
   },
   {
     "question": "Who owns all database objects deployed using the SAP HANA Deployment Infrastructure (HDI)?",
@@ -805,7 +805,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "XS engine",
       "Compile server"
     ],
-    "correctAnswer": ["Index server", "Compile server"]
+    "correctAnswer": ["Web dispatcher", "Compile server"]
   },
   {
     "question": "A new version of SAP HANA Cloud, SAP HANA database is available as of today. If you do NOT perform the upgrade manually, how much time do you have before your database will be automatically upgraded to the next version?",
@@ -841,7 +841,7 @@ const sapDbAdminExam: QuizQuestion[] =[
     "question": "What is the only assignable privilege for the Privileges on Users type?",
     "options": [
       "ATTACH DEBUGGER",
-      "STRUCTUREDPRIVILEGE ADMIN",
+      "STRUCTURED PRIVILEGE ADMIN",
       "CATALOG READ",
       "AUDIT OPERATOR"
     ],
@@ -905,10 +905,10 @@ const sapDbAdminExam: QuizQuestion[] =[
     "options": [
       "LDAP identity provider",
       "Scopes",
-      "LDAP authorization mode",
+      "LDAP authorization modes",
       "User group"
     ],
-    "correctAnswer": ["LDAP authorization mode", "User group"]
+    "correctAnswer": ["LDAP authorization modes", "User group"]
   },
   {
     "question": "What can you assign to a user group in the SAP HANA Cloud, SAP HANA database? Note: There are 2 correct answers to this question.",
@@ -938,7 +938,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "COCKPIT MONITOR",
       "HDLADMIN"
     ],
-    "correctAnswer": "DBADMIN"
+    "correctAnswer": "HDLADMIN"
   },
   {
     "question": "You want to prevent changes to system properties in tenant databases. Which configuration file stores the blocklisted properties?",
@@ -988,7 +988,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "sapcontrol -nr <INSTANCE_NUMBER>-function StartSystem",
       "of start <APPLICATION_NAME>"
     ],
-    "correctAnswer": "sapcontrol -nr <INSTANCE_NUMBER>-function StartSystem"
+    "correctAnswer": "cf update-service <SERVICE_INSTANCE> -c \"{ \"data\": {\"service Stopped\": false}}\""
   },
   {
     "question": "Which tools can you use to disable tenant database functionalities? Note: There are 2 correct answers to this question.",
@@ -998,7 +998,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "hdbuserstore",
       "Manage Restricted Features"
     ],
-    "correctAnswer": ["resident hdblcm", "Manage Database Configuration"]
+    "correctAnswer": ["Manage Database Configuration", "Manage Restricted Features"]
   },
   {
     "question": "Which system privilege must you have to restrict features for tenant databases in the SAP HANA cockpit?",
@@ -1067,10 +1067,10 @@ const sapDbAdminExam: QuizQuestion[] =[
     "options": [
       "Cockpit Administrator role",
       "Cockpit Database Administrator role",
-      "Cockpit User Administrator rolle",
+      "Cockpit User Administrator role",
       "Cockpit User role"
     ],
-    "correctAnswer": "Cockpit User Administrator rolle"
+    "correctAnswer": "Cockpit User Administrator role"
   },
   {
     "question": "Which user is automatically created when you add a data lake to an SAP HANA Cloud, SAP HANA database?",
