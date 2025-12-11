@@ -1215,6 +1215,19 @@ const sapDbAdminExam: QuizQuestion[] =[
     "correctAnswer": "2 weeks"
   },
   {
+    "question": "What can you check with the SAP HANA hardware and cloud measurement tool (HCMT)? Note: There are 2 correct answers to this question.",
+    "options": [
+      "Linux kernel information",
+      "Cloud connector status",
+      "CPU states",
+      "NUMA memory bandwidth test"
+    ],
+    "correctAnswer": [
+      "CPU states",
+      "NUMA memory bandwidth test"
+    ]
+  },
+  {
     "question": "Which tool do you use to reinitialize a non-recoverable system database?",
     "options": [
       "hdbrecovercheck",
