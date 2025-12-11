@@ -1235,7 +1235,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "hdbmdcutil",
       "RecoverUtil.py"
     ],
-    "correctAnswer": "recoverSys.py"
+    "correctAnswer": "hdbmdcutil"
   },
   {
     "question": "How do you initiate a recovery of your SAP HANA Cloud, SAP HANA database instance?",
