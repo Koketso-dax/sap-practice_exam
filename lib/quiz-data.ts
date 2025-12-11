@@ -583,7 +583,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "DP server",
       "DI server"
     ],
-    "correctAnswer": ["Compile server", "Name server"]
+    "correctAnswer": ["DP server", "DI server"]
   },
   {
     "question": "What can you check with the SAP HANA hardware and cloud measurement tool (HCMT)? Note: There are 2 correct answers to this question.",
