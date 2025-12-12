@@ -877,7 +877,7 @@ const sapDbAdminExam: QuizQuestion[] =[
       "Assign LDAP Groups",
       "Create Group Admin"
     ],
-    "correctAnswer": ["Create Role in Schema", "Assign to Role Group", "Create Group Admin"]
+    "correctAnswer": ["Create Role in Schema", "Assign to Role Group", "Assign LDAP Groups"]
   },
   {
     "question": "Which privilege types are available in SAP HANA Cloud? Note: There are 3 correct answers to this question.",
